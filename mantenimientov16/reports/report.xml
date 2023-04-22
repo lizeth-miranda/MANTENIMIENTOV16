@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report id="report_maintenance" string="ORDEN DE SERVICIO DE MANTENIMIENTO" model="maintenance.request" report_type="qweb-pdf" name="mantenimiento.reporte_mantenimiento" file="mantenimiento.reporte_mantenimiento" />
+
+</odoo>

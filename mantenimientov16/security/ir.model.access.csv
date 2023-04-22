@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+refacciones_manager,refacciones manager,model_refacciones_line,refacciones_group,1,1,1,1
+refacciones_read_all,refacciones all,model_refacciones_line,,1,0,0,0
+equipos_mante_manager, equipos mantenimiento manager,model_maintenance_equipment,equipos_mantenimiento_group,1,1,1,1

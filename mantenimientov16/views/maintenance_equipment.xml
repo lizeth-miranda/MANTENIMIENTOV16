@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="maintenance_equipment_view_form" model="ir.ui.view">
+        <field name="name">maintenance.equipment.view.form.inherited</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="sistemas" />
+            </xpath>
+
+            <!-- <xpath expr="//page[3]" position='after'>
+                <page string="Revisiones y notas">
+                    <group>
+                        <field name="rev" />
+                        <field name="fecha_publ" />
+                        <field name="fecha_prox" />
+                        <field name="cod" />
+                        <field name="nota" />
+                    </group>
+                </page>
+            </xpath> -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+
+                <field name="employee" />
+                <field name="department" />
+                <field name="puesto" />
+            </xpath>
+            <xpath expr="//field[@name='partner_ref']" position="after">
+
+                <field name="marca" />
+            </xpath>
+
+            <!-- <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="attrs">{"invisible": [["sistemas","=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='obra']" position="attributes">
+                <attribute name="attrs">{"invisible": [["sistemas","=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_ref']" position="attributes">
+                <attribute name="attrs">{"invisible": [["sistemas","=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='model']" position="attributes">
+                <attribute name="attrs">{"invisible": [["sistemas","=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='marca']" position="attributes">
+                <attribute name="attrs">{"invisible": [["sistemas","=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='serial_no']" position="attributes">
+                <attribute name="attrs">{"invisible": [["sistemas","=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='effective_date']" position="attributes">
+                <attribute name="attrs">{"invisible": [["sistemas","=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='cost']" position="attributes">
+                <attribute name="attrs">{"invisible": [["sistemas","=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='warranty_date']" position="attributes">
+                <attribute name="attrs">{"invisible": [["sistemas","=",True]]}</attribute>
+            </xpath> -->
+        </field>
+    </record>
+</odoo>

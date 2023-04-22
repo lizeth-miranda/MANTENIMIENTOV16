@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="maintenance_request_view_form" model="ir.ui.view">
+        <field name="name">maintenance.request.view.form.inherited</field>
+        <field name="model">maintenance.request</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form" />
+        <field name="arch" type="xml">
+            <!-- <div class="oe_title">
+                <h1>
+                    <field name="name_seq" readonly="1" />
+                </h1>
+            </div> -->
+            <!-- <field name="category_id" position="before">
+                <field name="flota" options="{'no_create_edit': True, 'no_open': True}"
+                    attrs='{"readonly": [["equipment_id","!=",False]]}' />
+            </field> -->
+            <xpath expr="//field[@name='equipment_id']" position="before">
+                <field name="puesto" string="Puesto"
+                    options="{'no_create_edit': True, 'no_open': True}" />
+                <field name="dpto" string="Departamento"
+                    options="{'no_create_edit': True, 'no_open': True}" />
+                <field name="cod_obra" string="Código de Obra"
+                    options="{'no_create_edit': True, 'no_open': True}" />
+            </xpath>
+
+            <sheet>
+                <notebook>
+                    <page string="Descripción y fallas de Equipo/herramientas">
+                        <group>
+                            <field name="equipo" />
+                            <field name="marca" />
+                            <field name="modelo" />
+                            <field name="Numserie" />
+                            <field name="hrs_trabajo" widget="float_time" />
+                            <field name="desc_falla" />
+                        </group>
+                        <group>
+                            <field name="pregunta1" />
+                            <field name="explicacion" />
+                        </group>
+                    </page>
+                    <page string="Solución Inmediata">
+                        <group>
+                            <field name="rep_inm" />
+                            <field name="rep_compra" />
+                            <field name="rep_alma" />
+                            <field name="renta" />
+                            <field name="sust_herr" />
+                            <field name="esp_rep" />
+                            <field name="otr" />
+                        </group>
+                        <group>
+                            <field name="observaciones" />
+                        </group>
+                    </page>
+                    <page string="Solución de Mantenimiento ">
+                        <group>
+                            <field name="solucion_mante" />
+                            <field name="fecha_comp" />
+                        </group>
+                    </page>
+                    <page string="Refacciones Utilizadas  ">
+                        <field name="refa_ids">
+                            <tree>
+                                <field name="refa_uti" />
+                                <field name="fac" />
+                                <field name="costos" widget="Monetary" />
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Revisiones" groups="hr.group_hr_manager">
+                        <group>
+                            <field name="revision" />
+                            <field name="fecha_publi" />
+                            <field name="fecha_prox" />
+                            <field name="codigo" />
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+        </field>
+    </record>
+
+    <record id="maintenance_request_view_tree" model="ir.ui.view">
+        <field name="name">maintenance.request.tree</field>
+        <field name="model">maintenance.request</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_request_view_tree" />
+        <field name="arch" type="xml">
+            <!-- <field name="name" position="after">
+                <field name="name_seq" />
+            </field> -->
+            <field name="request_date" position="after">
+                <field name="equipment_id" />
+                <field name="Numserie" />
+                <field name="marca" />
+                <field name="cod_obra" />
+                <field name="desc_falla" />
+                <field name="maintenance_type" />
+                <field name="schedule_date" />
+                <field name="solucion_mante" />
+                <field name="user_id" />
+                <field name="duration" />
+            </field>
+        </field>
+    </record>
+
+</odoo>

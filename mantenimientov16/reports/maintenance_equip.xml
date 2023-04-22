@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="maintenance_equipment_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <!-- <t t-call="mantenimiento.maintenance_equipment_template" /> -->
+                <t t-foreach="docs" t-as="doc">
+                    <div class="Header">
+                        <!-- <h5 class="text-center">FORMATO DE RESGUARDO</h5> -->
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr class="table-active">
+                                    <td colspan="4" class="text-center">FORMATO DE RESGUARDO</td>
+                                </tr>
+                                <tr class="table-active">
+                                    <th class="text-left">Revisión</th>
+                                    <th class="text-left">Fecha de Publicación</th>
+                                    <th class="text-left">Fecha de Próxima Revisión</th>
+                                    <th class="text-left">Código</th>
+                                </tr>
+                            </thead>
+                            <tbody class="mante_tbody">
+                                <tr>
+                                    <th class="text-left">1</th>
+                                    <th class="text-left">11/08/2021</th>
+                                    <th class="text-left">11/08/2022</th>
+                                    <th class="text-left">FO 19 RES 01</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr class="table-active">
+                                <td colspan="4" class="text-center">SOLICITUD DE EQUIPO DE COMPUTO</td>
+                            </tr>
+                            <tr class="table-active">
+                                <th name="desc" class="text-center">Nombre</th>
+                                <th name="desc" class="text-center">Fecha de asignación</th>
+                                <th name="desc" class="text-center">Departamento / obra</th>
+                                <th name="desc" class="text-center">Puesto</th>
+                            </tr>
+                        </thead>
+                        <tbody class="mante_tbody">
+                            <tr>
+                                <td name="td_desc">
+                                    <span t-field="doc.employee_id" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.assign_date" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.department" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.puesto" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr class="table-active">
+                                <td colspan="4" class="text-center">DESCRIPCIÓN DEL EQUIPO</td>
+                            </tr>
+                            <tr class="table-active">
+                                <th name="desc" class="text-center">Marca</th>
+                                <th name="desc" class="text-center">Modelo</th>
+                                <th name="desc" class="text-center">N° de serie</th>
+                                <th name="desc" class="text-center">Comentarios</th>
+                            </tr>
+
+                        </thead>
+                        <tbody class="mante_tbody">
+                            <tr>
+                                <td name="td_desc">
+                                    <span t-field="doc.marca" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.model" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.serial_no" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.note" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr class="table-active">
+                                <th name="desc" class="text-center">NOTA</th>
+                            </tr>
+                        </thead>
+                        <tbody class="mante_tbody">
+                            <tr>
+                                <th class="text-left">La persona que firme el presente
+                                    resguardo, adquiere la responsabilidad por el valor de los
+                                    objetos descritos; asimismo, está obligada a informar al
+                                    departamento de sistemas de cualquier movimiento de alta,
+                                    baja o cambio de los bienes bajo su custodia. El presente
+                                    resguardo invalida todos los anteriores a la fecha de
+                                    emisión.</th>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr class="table-active">
+                                <th class="text-center">Nombre y Firma de conformidad del usuario</th>
+                            </tr>
+                        </thead>
+                        <tbody class="mante_tbody">
+                            <tr class="table-active"></tr>
+                        </tbody>
+                    </table>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

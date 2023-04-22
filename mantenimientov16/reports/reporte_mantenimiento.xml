@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="reporte_mantenimiento">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-call="mantenimiento.report_maintenance" />
+                <t t-foreach="docs" t-as="doc">
+                    <div class="Header">
+                        <div class="oe_structure" />
+                        <h2>
+                            <span t-esc="doc.name_seq" />
+                        </h2>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr class="table-active">
+                                    <th class="text-left">Revisión</th>
+                                    <th class="text-left">Fecha de Publicación</th>
+                                    <th class="text-left">Fecha de Próxima Revisión</th>
+                                    <th class="text-left">Código</th>
+                                </tr>
+                            </thead>
+                            <tbody class="mante_tbody">
+                                <tr>
+                                    <td>
+                                        <span t-esc="doc.revision" />
+                                    </td>
+
+                                    <td>
+                                        <span t-esc="doc.fecha_publi" t-options='{"widget": "date"}' />
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.fecha_prox" t-options='{"widget": "date"}' />
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.codigo" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- <span>Order #</span> -->
+
+
+                        <strong>Fecha de Solicitud:</strong>
+                        <t class="m-0" t-esc="doc.request_date" t-options='{"widget": "date"}' />
+                        <br></br>
+                        <br></br>
+
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr class="table-active">
+                                    <th name="employee_id.name" class="text-left">Nombre del solicitante</th>
+                                    <th name="puesto.name" class="text-left">Puesto</th>
+                                    <th name="dpto.name" class="text-left">Departamento</th>
+                                    <th name="fecha_limit" class="text-left">Fecha limite de entrega</th>
+                                </tr>
+                            </thead>
+                            <tbody class="mante_tbody">
+                                <tr>
+                                    <td name="td_name">
+                                        <span t-field="doc.employee_id.name" />
+                                    </td>
+                                    <td name="td_puesto">
+                                        <span t-field="doc.puesto.name" />
+                                    </td>
+                                    <td name="td_dpto">
+                                        <span t-field="doc.dpto.name" />
+                                    </td>
+                                    <td name="td_fecha_limit">
+                                        <span t-field="doc.schedule_date" t-options='{"format": "dd/MM/yyyy"}' />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-sm o_main_table">
+                            <tbody class="mante_tbody">
+                                <tr>
+                                    <th name="desc" class="text-left">¿Se realizó algún movimiento al equipo por el operador?</th>
+                                    <td WIDTH="50">
+                                        <span t-field="doc.pregunta1" />
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th name="desc" class="text-left">Explique Brevemente:</th>
+                                    <td WIDTH="50">
+                                        <span t-field="doc.explicacion" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr class="table-active">
+                                    <th name="equipment_id" class="text-left">Equipo</th>
+                                    <th name="puesto.name" class="text-left">Marca</th>
+                                    <th name="dpto.name" class="text-left">Modelo</th>
+                                    <th name="nserie" class="text-left">N°Serie</th>
+                                    <th name="odometro" class="text-left">Odómetro/hrs</th>
+                                </tr>
+                            </thead>
+                            <tbody class="mante_tbody">
+                                <tr>
+                                    <td name="td_equipo">
+                                        <span t-field="doc.equipment_id" />
+                                    </td>
+                                    <td name="td_marca">
+                                        <span t-field="doc.marca" />
+                                    </td>
+                                    <td name="td_modelo">
+                                        <span t-field="doc.modelo" />
+                                    </td>
+                                    <td name="td_numserie">
+                                        <span t-field="doc.Numserie" />
+                                    </td>
+                                    <td name="td_odometro">
+                                        <span t-field="doc.hrs_trabajo" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr class="table-active">
+                                    <th name="desc" class="text-center">Descripción de la Falla por Cliente Interno</th>
+                                </tr>
+                            </thead>
+                            <tbody class="mante_tbody">
+                                <tr>
+                                    <td name="td_desc">
+                                        <span t-field="doc.desc_falla" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr class="table-active">
+                                        <th name="repa_inme" class="text-left" width="50">Reparación Inmediata</th>
+                                        <th name="repa_comp" class="text-left" width="50">Reposición compra</th>
+                                        <th name="repa_alma" class="text-left" width="50">Reposición Almacén</th>
+                                        <th name="repa_renta" class="text-left" width="50">Renta</th>
+                                        <th name="susti_inm" class="text-left" width="50">Sustitución Herramienta</th>
+                                        <th name="espera_rep" class="text-left" width="50">Espera de Reparación</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td name="td_inme">
+                                            <span t-field="doc.rep_inm" />
+                                        </td>
+                                        <td name="td_compra">
+                                            <span t-field="doc.rep_compra" />
+                                        </td>
+                                        <td name="td_alma">
+                                            <span t-field="doc.rep_alma" />
+                                        </td>
+                                        <td name="td_renta">
+                                            <span t-field="doc.renta" />
+                                        </td>
+                                        <td name="td_sust">
+                                            <span t-field="doc.sust_herr" />
+                                        </td>
+                                        <td name="td_esp_rep">
+                                            <span t-field="doc.esp_rep" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br></br>
+                        <p>
+                            <strong>Firma de conformidad del usuario:</strong>
+                        </p>
+                        <br></br>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr class="table-active">
+                                    <th class="text-center">Observaciones del Supervisor ante la solución inmediata</th>
+                                </tr>
+                            </thead>
+                            <tbody class="mante_tbody">
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.observaciones" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr class="table-active">
+                                    <th name="soluci_mant" class="text-center">Solución de Mantenimiento</th>
+                                </tr>
+                            </thead>
+                            <tbody class="mante_tbody">
+                                <tr>
+                                    <td name="td_solu_mant">
+                                        <span t-field="doc.solucion_mante" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <strong>Fecha Compromiso de Entrega:</strong>
+                        <span t-esc="doc.fecha_comp" t-options='{"widget": "date"}' />
+                        <br></br>
+                        <br></br>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr class="table-active">
+                                    <th name="refa_uti" class="text-center">Refacciones Utilizadas</th>
+                                    <th name="factura" class="text-center">Factura</th>
+                                    <th name="costos" class="text-center">Costos</th>
+                                </tr>
+                            </thead>
+                            <tbody class="mante_tbody">
+                                <t t-foreach="doc.refa_ids" t-as="line">
+                                    <tr>
+                                        <td class="text-center">
+                                            <span t-field="line.refa_uti" />
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="line.fac" />
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="line.costos" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <strong>Horas Empleadas en el Mantenimiento:</strong>
+                        <span t-esc="doc.duration" t-options='{"widget": "float_time"}' />
+                        <br></br>
+                        <br></br>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr class="table-active">
+                                    <th class="text-center">Firma de conformidad del usuario</th>
+                                    <th class="text-center">Firma de quien atendió el servicio</th>
+                                </tr>
+                            </thead>
+                            <tbody class="mante_tbody">
+                                <tr class="table-active"></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

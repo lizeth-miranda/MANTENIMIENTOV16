@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="equipos_sistemas_group" model="res.groups">
+        <field name="name">equipos sistemas</field>
+    </record>
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="refacciones_view_form" model="ir.ui.view">
+        <field name="name">refacciones.line.view.form</field>
+        <field name="model">refacciones.line</field>
+        <field name="arch" type="xml">
+            <form string="Refacciones">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="refa_uti" />
+                            <field name="fac" />
+                            <field name="costos" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
