@@ -9,9 +9,9 @@
     ],
     'data': [
         # security
-        'security/groupsRefa.xml',
-        'security/equipos_mante.xml',
-        'security/ir.model.access.csv',
+        #'security/groupsRefa.xml',
+        #'security/equipos_mante.xml',
+        #'security/ir.model.access.csv',
         # data
         # 'data/sequence.xml',
         # wizards
