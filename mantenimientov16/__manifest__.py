@@ -4,6 +4,7 @@
     'version': '16.0',
     'author': 'Demsa Industrial',
     'website': '',
+    'license': 'LGPL-3',
     'depends': [
         'maintenance',
     ],
