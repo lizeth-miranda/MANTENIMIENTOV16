@@ -10,7 +10,7 @@
     'data': [
         # security
         #'security/groupsRefa.xml',
-        #'security/equipos_mante.xml',
+        'security/equipos_mante.xml',
         #'security/ir.model.access.csv',
         # data
         # 'data/sequence.xml',
@@ -25,7 +25,7 @@
         'views/equipos_sistemas.xml',
         # 'views/maintenance.xml',
         # 'views/refacciones.xml',
-        # 'views/product_template.xml',
+        'views/product_template.xml',
         'views/maintenance_equipment.xml',
 
     ],
