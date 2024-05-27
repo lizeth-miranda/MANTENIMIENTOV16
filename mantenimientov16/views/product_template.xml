@@ -9,7 +9,7 @@
             <header>
                 <button name="enviar" type="object" class="oe_highlight"
                     string="Crear en Mantenimiento"
-                    groups="mantenimientov16.equipos_mantenimiento_group"/>      
+                    <!--groups="mantenimientov16.equipos_mantenimiento_group"/>-->      
             </header>
             <notebook>
                 <page string="Mantenimiento">
