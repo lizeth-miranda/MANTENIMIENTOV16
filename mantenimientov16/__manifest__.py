@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Mantenimiento Demsav16',
-    'version': '16.6',
+    'version': '16.1',
     'author': 'Demsa Industrial',
     'website': '',
     'depends': [
@@ -18,8 +18,10 @@
         # reports
         # 'reports/report.xml',
         # 'reports/Maintenance_report.xml',
-        #'reports/report_equipment.xml',
-        #reports/maintenance_equip.xml',
+        'reports/report_equipment.xml',
+        'reports/maintenance_equip.xml',
+        'reports/free_report_equipment.xml',
+        'reports/free_equipment.xml',
         # demo
         # views
         'views/equipos_sistemas.xml',
