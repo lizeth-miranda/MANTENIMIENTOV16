@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="free_equipment_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="Header">
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr class="table-active">
+                                    <td colspan="4" class="text-center">FORMATO DE LIBERACION</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr class="table-active">
+                                <td colspan="4" class="text-center">SOLICITUD</td>
+                            </tr>
+                            <tr class="table-active">
+                                <th name="desc" class="text-center">Nombre</th>
+                                <th name="desc" class="text-center">Fecha</th>
+                                <th name="desc" class="text-center">Departamento / obra</th>
+                                <th name="desc" class="text-center">Puesto</th>
+                            </tr>
+                        </thead>
+                        <tbody class="mante_tbody">
+                            <tr>
+                                <td name="td_desc">
+                                    <span t-field="doc.employee_id" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.assign_date" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.department" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.puesto" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr class="table-active">
+                                <td colspan="4" class="text-center">DESCRIPCIÓN DEL EQUIPO</td>
+                            </tr>
+                            <tr class="table-active">
+                                <th name="desc" class="text-center">Marca</th>
+                                <th name="desc" class="text-center">Modelo</th>
+                                <th name="desc" class="text-center">N° de serie</th>
+                                <th name="desc" class="text-center">Comentarios</th>
+                            </tr>
+
+                        </thead>
+                        <tbody class="mante_tbody">
+                            <tr>
+                                <td name="td_desc">
+                                    <span t-field="doc.marca" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.model" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.serial_no" />
+                                </td>
+                                <td name="td_desc">
+                                    <span t-field="doc.note" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr class="table-active">
+                                <th name="desc" class="text-center">NOTA</th>
+                            </tr>
+                        </thead>
+                        <tbody class="mante_tbody">
+                            <tr>
+                                <th class="text-left">Por este medio quiero dejar constancia que he entregado los equipos que tenia en mi poder.
+                                dichos equipos están en el estado que mefueron entregados. A partir de este momento me desliondo del mal uso, extravio
+                                o cualquier situación con la que se relacione el bien.</th>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr class="table-active">
+                                <th class="text-center">Nombre y Firma de conformidad del usuario</th>
+                            </tr>
+                        </thead>
+                        <tbody class="mante_tbody">
+                            <tr class="table-active"></tr>
+                        </tbody>
+                    </table>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
